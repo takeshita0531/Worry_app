@@ -1,0 +1,104 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.form-heading{
+    text-align:center;
+    padding-left:70px;
+}
+
+.user-edit{
+     position:absolute;
+     width:100%;
+     text-align:center;
+     top:100px;
+}
+
+.form-heading{
+    position:absolute;
+     top:50px;
+    left:550px;
+    font-size:30px;
+
+}
+
+.main-user-show{
+    width:100%;
+    position:absolute;
+    top:80px;
+    text-align:center;
+    margin:0 auto;
+    
+     
+     
+}
+
+.user-name{
+    padding-top:20px;
+    text-align:center;
+    margin:0 auto;
+}
+.user-name-all{
+     background-color:gray;
+    overflow:hedden;
+   padding:30px 40px;
+    background-color:white;
+    box-shadow: 0 2px 6px #c1ced7;
+}
+.user-index{
+    position:absolute;
+    top:80px;
+    padding-left:450px;
+    width:400px;
+    text-align:center;
+}
+.user-all{
+    color:gray;
+    opacity:0.7;
+}
+.user-left{
+
+    text-align:center;
+}
+.user-image{
+   
+    text-align:center;
+}
+.user-image_name{
+   display:inline-block;
+}
+.user-container{
+    text-align:center;
+}
+.user-content-all{
+  
+  background-color: gray;
+  overflow: hedden;
+  padding: 20px 300px;
+ 
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  
+}
+.user-content{
+    width:90%;
+    position:absolute;
+    top:300px;
+    margin : 0px 70px;
+   
+}
+
+.user-left-show{
+    position:absolute;
+    padding-top:10px;
+    margin-left: 10px ;
+}
+.user-name-show{
+    position:absolute;
+    margin-left:60px;
+    padding-top:10px;
+    padding-left:20px;
+}
+
+.worry-image{
+    padding-top:15px;
+}

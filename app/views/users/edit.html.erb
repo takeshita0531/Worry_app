@@ -1,0 +1,18 @@
+<div  class="form-heading">
+    <hi>ユーザー編集</hi>
+</div>    
+    <div class="user-edit">
+
+    <%= form_for(@user) do |f| %>
+    <% if @user.image_name? %>
+        <%= image_tag @user.image_name.url, :size => "200x200" %>
+        <br>
+    <%else%>
+        <%=image_tag("/image_name/original_5") %>
+    <%end%>
+        <%=f.file_field :image_name %>
+        <br>
+        <%=f.text_field :username%>
+        <%= f.submit"保存" %>
+    <%end%>
+    </div>

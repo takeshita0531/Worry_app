@@ -1,0 +1,64 @@
+<div class="main-show">
+    <div class="container">
+        <div class="show-item">
+            <div class="user-name-left">
+                <% if @worry.user.present? %>
+                    <%= link_to(@worry.user.username, "/users/#{@worry.user.id}") %>
+                <% end %>
+            </div>
+            <div class="worry-left">
+                <%# binding.pry %>
+                <% if @worry.user.image_name.present? %>
+                    <%= image_tag @worry.user.image_name.url, :size => "50x50" %> 
+                <% end %>
+            </div>
+            <p class="content-show">
+                <%=@worry.content%>
+            </p>
+              <div class="image">
+                  <% if @worry.image?%>
+                <%=image_tag @worry.image.url, :size => '300x300'%>
+                <% end %>
+              </div>
+                    <div class="worry-right">
+                        <%=@worry.created_at.strftime("%Y-%m-%d %H:%M") %>
+                    </div>
+                        <% if @worry.user_id == @worry.user_id %>
+                            <div class="worry-item-content">
+                                <p>
+                                     <%= link_to("編集", "/worry/#{@worry.id}/edit") %>
+                                     <%= link_to("削除", "/worry/#{@worry.id}/destroy", {method: "post"}) %>
+                                </p>
+                            </div>
+                    <%end%>
+        </div>
+               <% @comments.each do |c| %>
+                   <div class="comment-image-left">
+                           <%= image_tag c.user.image_name.url, :size => "50x50" %>
+                   </div>
+                   <div class="comment-name-left">
+                       <%= link_to(c.user.username, "/users/#{c.user.id}") %>
+                   </div>
+                   <div class="comment-all">
+                        <div class="comment">
+                           <%= c.content %>
+                        </div>
+                        <div class="destroy-comment">
+                            <%=link_to("削除","/comments/#{c.id}/destroy", {method: "post"}) %>
+                        </div>
+                        <div class="worry-right">
+                            <%=c.created_at.strftime("%Y-%m-%d %H:%M") %>
+                        </div>
+                   </div>
+               <%end%>
+            <div class="commentsuru">
+               <%= form_tag("/comments/create") do %> 
+                   <%= hidden_field_tag :worry_id, @worry.id %>
+                   <%= text_field_tag :content %> 
+                   <br>
+                   <%= submit_tag "コメントする" %>
+               <%end%>
+            </div>
+    </div>
+</div>
+                               

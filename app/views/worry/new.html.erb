@@ -1,0 +1,27 @@
+<div class="worry-new">
+    <div class=container>
+        <div class="cansell">
+            
+            <%=link_to("キャンセル","/worry/index")%>
+        </div>
+        <div class="form">
+           
+            <div class="form_body">
+                <%= form_for @worry, url: worry_create_path do |f| %>
+                    <%= f.text_area :content %> 
+                    <br>
+                    <%= f.file_field :image %>
+                    <br>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <br>
+                    <%= f.submit "投稿" %>
+                <% end %>
+             </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+  

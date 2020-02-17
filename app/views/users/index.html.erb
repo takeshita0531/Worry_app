@@ -1,0 +1,16 @@
+<div class="user-index">
+    <h1 class="user-all">ユーザー一覧</h1>
+    <% @users.each do |user| %>
+    <div class="user-name-all">
+        <div class="user-left">
+              <% if user.image_name.present? %>
+              <%# binding.pry %>
+                 <%= image_tag user.image_name.url, :size => "50x50" %>     
+              <% else %>
+                 <%= image_tag("/image_name//original_5") %>
+              <% end %>   
+        </div>
+        <%=link_to(user.username, "/users/#{user.id}") %>
+    </div>
+    <%end%>
+</div>

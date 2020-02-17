@@ -1,0 +1,7 @@
+<div class="main-post-new">
+    <h1 class="form-heading">編集</h1>
+    <%= form_tag ("/worry/#{@worry.id}/update") do %>
+    <textarea name="content"><%=@worry.content%></textarea>
+    <input type="submit" value="保存">
+    <%end%>
+</div>

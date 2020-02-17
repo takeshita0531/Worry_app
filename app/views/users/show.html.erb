@@ -1,0 +1,47 @@
+<% if user_signed_in? %>
+    <div class="main-user-show">
+        <div "user-image-name">
+        <div class="user-image">
+    <% if @user.present? and @user.image_name.present? %>
+        <%= image_tag @user.image_name.url, :size => "200x200" %>
+    <%else%>
+        <%= image_tag "/3963428305_bdcb0928b7_b.jpg", :size => "200x200" %>
+    <%end%>    
+        </div>
+        <div class="user-container">
+        <div class="user-name">
+        <%=@user.username%>
+        </div>
+        </div>
+            
+        </div>
+        <% if @user.id == current_user.id %>
+            <p>
+                <%=link_to("プロフィール編集", "/users/#{@user.id}/edit")%>
+            </p>
+        <%end%>
+        <div class=user-content>
+            <% @user.worries.each do |worry| %>
+            <div class="user-name-show">
+                <%= link_to(worry.user.username, "/users/#{worry.user.id}") %>
+            </div>
+            <div class="user-left-show">
+                <% if @user.image_name.present? %>
+                    <%= image_tag @user.image_name.url, :size => "50x50" %>
+            </div>
+                <% end %>
+                <div class="user-content-all"> 
+                    <%=link_to(worry.content,"/worry/#{worry.id}")%>
+                    <div class="worry-image">
+                        <% if worry.image.present? %>
+                        <%= image_tag worry.image.url, :size => "300x300" %>
+                        <% end %>
+                    </div>
+                    <div class="worry-right">
+                        <%=worry.created_at.strftime("%Y-%m-%d %H:%M") %>
+                    </div>
+                </div>
+            <%end%>
+        </div>
+    </div>
+<% end %>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WorryApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+
+  </head>
+  
+<ul class="header-logo">
+  <li><%=link_to("ホーム","/worry/index")%></li>
+  <li class="buttn"><%=link_to("投稿","/worry/new")%></li>
+  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+  <% if user_signed_in? %>
+  <li><%=link_to(current_user.username, "/users/#{current_user.id}") %></li>
+  <% end %>
+  <li><%= link_to("ユーザー一覧","/users/index") %></li>
+</ul>
+ 
+ 
+    
+  
+    
+ 
+    
+    
+    
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
+

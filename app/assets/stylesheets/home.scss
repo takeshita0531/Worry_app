@@ -1,0 +1,102 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+    
+.top-warraper{
+   
+     
+    background-image:url(https://aer.eu/wp-content/uploads/2019/04/michelangelo-71282_1280-1.jpg);
+    background-size:cover;
+    height:700px;
+    padding-top:6px;
+    padding-bottom:80px;
+   
+}
+
+header{
+    background-color: rgba(34, 49, 52, 1);
+    height:50px;
+    width:100%;
+    position:fixed;
+    top:0;
+}
+.header-left{
+     float:left;
+}
+.header-right{
+    float:right;
+    
+}
+
+.top-container h1{
+    font-size:50px;
+    text-align:center;
+    color:#8B008B;
+    opacity:0.7;
+    letter-spacing:0.1em;
+}
+.top-container h2{
+    font-size:30px;
+    text-align:center;
+     color:#8B008B;
+    opacity:0.7;
+}
+.toha{
+    color:#708090;
+}
+.top-container h3{
+    text-align:center;
+    
+}
+.header-left{
+     color:#8B008B;
+     opacity:0.8;
+     font-size:20px;
+     padding-top:8px;
+     padding-left:15px;
+}
+.header-right a{
+     display:block;
+     color:black;
+     opacity:0.7;
+     font-size:17px;
+     padding-top:10px;
+     padding-bottom:14px;
+     padding-right:20px;
+     padding-left:20px;
+     background-color: rgba(255,255,255,0.8);
+     margin-right:10px;
+}
+.header-right a:hover{
+    opacity:1;
+}
+.entry{
+    
+}
+.signup{
+      display:block;
+    text-align:center;
+    color:white;
+      
+      background-color: rgba(51,153,51,0.7);
+      width:100px;
+      margin:0 auto;
+      margin-top:100px;
+      padding:5px 2px;
+}
+.login{
+    text-align:center;
+      color:white;
+      background-color: rgba(153,0,51,0.7);
+      width:100px;
+      margin:0 auto;
+      margin-top:20px;
+      padding:5px 2px;
+}
+.login:hover{
+   background-color: rgba(153,0,51,1);
+}
+.signup:hover{
+    background-color: rgba(51,153,51,1);
+}
+

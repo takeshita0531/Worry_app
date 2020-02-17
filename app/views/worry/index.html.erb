@@ -1,0 +1,38 @@
+<div class="worry-index">
+    <div class="container-index">
+        <div class="home-letter">ホーム</div>
+        
+        
+        <% @worries.each do |worry|%>
+        <div class="worry-left-name">
+            <div class="user-name-left">
+                <% if worry.user.present? %>
+                   <%= link_to(worry.user.username, "/users/#{worry.user.id}") %> 
+                <% end %>
+            </div>
+                <div class="worry-left">
+                <%# binding.pry %>
+                <% if worry.user.present? and worry.user.image_name.present? %>
+                    <%= image_tag worry.user.image_name.url, :size => "50x50" %> 
+            　　<% else %>
+                     <%=image_tag("/image_name/original_5") %>
+                <% end %>   
+                </div>
+        </div>
+            <div class="worry-item">
+                <%# binding.pry %>
+                <div class="image">
+                    <%=link_to(worry.content, "/worry/#{worry.id}")%>
+                </div>
+                    <% if worry.image.present? %>
+                        <%= image_tag worry.image.url, :size => "150x150" %>
+                    <% end %>
+                        <div class="worry-right">
+                            <%=worry.created_at.strftime("%Y-%m-%d %H:%M") %>
+                        </div>
+            </div>
+        <% end %>
+        </div>
+    </div>
+</div>
+                  
